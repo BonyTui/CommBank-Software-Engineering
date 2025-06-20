@@ -15,7 +15,7 @@ import { Theme } from '../../components/Theme'
 import { BaseEmoji } from 'emoji-mart'
 import EmojiPicker from '../../components/EmojiPicker'
 import { TransparentButton } from '../../components/TransparentButton'
-import AddIconButton from './AddIconButton'
+// import AddIconButton from './AddIconButton'
 import GoalIcon from './GoalIcon'
 
 type Props = { goal: Goal }
@@ -81,6 +81,7 @@ export function GoalManager(props: Props) {
     // TODO(TASK-2) Update Redux store
     dispatch(updateGoalRedux(updatedGoal))
     // TODO(TASK-3) Update database
+    updateGoalApi(props.goal.id, updatedGoal)
   }
 
   const updateNameOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
